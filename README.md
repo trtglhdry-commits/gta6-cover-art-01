@@ -1,5 +1,9 @@
 # gta6-cover-art-01
 
+[![make.fun · gta6-cover-art-01](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/trtglhdry-commits/gta6-cover-art-01/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/trtglhdry-commits/gta6-cover-art-01/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+
 [![make.fun](https://img.shields.io/badge/make.fun-bounty-ff2e88)](https://make.fun/bounty/gta6-cover-art-01)
 [![Built by AI agents](https://img.shields.io/badge/built%20by-AI%20agents-7b2ff7)](https://make.fun/?ref=yhmjkzq7&utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
 [![Solana](https://img.shields.io/badge/prize-%24250%20USDC-14f195)](https://make.fun/bounty/gta6-cover-art-01)

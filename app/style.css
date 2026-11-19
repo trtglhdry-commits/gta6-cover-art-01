@@ -1,0 +1,281 @@
+/* Sunset Cover Studio — dark neon editor UI. Deep purple ink, sunset-orange
+   accents. Fonts are local files under app/fonts/ (SIL OFL). */
+
+@font-face {
+  font-family: 'Anton';
+  src: url('./fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./fonts/Pacifico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --ink: #150a24;
+  --ink-2: #1e1038;
+  --panel: #221244;
+  --panel-2: #2b1852;
+  --line: #3d2566;
+  --text: #f5eefc;
+  --muted: #b9a8d6;
+  --orange: #ff7a18;
+  --pink: #ff2e88;
+  --gold: #ffd319;
+  --teal: #00e5ff;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+header.top {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 20px 10px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, #2b1055, #7b2ff7 55%, #ff2e88);
+}
+
+header.top h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: #fff;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
+}
+
+header.top p {
+  margin: 0;
+  color: #ffe9f3;
+  font-size: 14px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 62px);
+}
+
+.controls {
+  padding: 16px 16px 24px;
+  background: var(--ink-2);
+  border-right: 1px solid var(--line);
+  overflow-y: auto;
+}
+
+.controls section {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.controls h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 10px;
+}
+
+.controls label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 4px;
+}
+
+.controls input[type="text"],
+.controls input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font-size: 15px;
+}
+
+.controls input[type="text"]:focus {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+}
+
+.controls input[type="range"] {
+  width: 100%;
+  accent-color: var(--orange);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover { border-color: var(--orange); background: #3a2170; }
+
+button.primary {
+  background: linear-gradient(90deg, var(--orange), var(--pink));
+  border: none;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 16px;
+}
+
+button.primary:hover { filter: brightness(1.12); }
+
+button.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #1a0b2e;
+  font-weight: 700;
+}
+
+button:disabled { opacity: 0.45; cursor: default; }
+
+.chip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.chip-grid button { font-size: 13px; padding: 8px 6px; }
+
+.swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.swatch {
+  width: 52px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.swatch.active { border-color: #fff; box-shadow: 0 0 0 2px var(--orange); }
+
+.swatch-sunset { background: linear-gradient(135deg, #ff7a18, #ff2e88 55%, #7b2ff7); }
+.swatch-neon { background: linear-gradient(135deg, #ff2e88, #7b2ff7 55%, #00e5ff); }
+.swatch-golden { background: linear-gradient(135deg, #ffd319, #ff9a3c 60%, #b34700); }
+.swatch-bubblegum { background: linear-gradient(135deg, #ff2975, #ff8fd1 55%, #00e5ff); }
+.swatch-noir { background: linear-gradient(135deg, #ffffff, #888 45%, #ff2e88 55%, #111); }
+
+.hint {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.dropzone {
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.dropzone.over {
+  border-color: var(--gold);
+  background: rgba(255, 211, 25, 0.08);
+  color: var(--text);
+}
+
+.panel-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.panel-list button { padding: 6px 10px; font-size: 13px; }
+
+.preview {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(255, 46, 136, 0.25), transparent 60%),
+    radial-gradient(700px 500px at 10% 110%, rgba(255, 122, 24, 0.22), transparent 60%),
+    var(--ink);
+}
+
+.preview canvas {
+  max-width: min(100%, 860px);
+  max-height: calc(100vh - 190px);
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+  background: #f8f3ea;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.export-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#status {
+  min-height: 20px;
+  font-size: 13px;
+  color: var(--gold);
+  text-align: center;
+}
+
+/* Shot mode: the cover alone, full-frame, no editor chrome. */
+body.shot-cover header.top,
+body.shot-cover .controls,
+body.shot-cover .export-bar,
+body.shot-cover #status { display: none; }
+
+body.shot-cover .app { display: block; min-height: 0; }
+
+body.shot-cover .preview {
+  padding: 0;
+  background: #f8f3ea;
+  display: block;
+}
+
+body.shot-cover .preview canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  background: #f8f3ea;
+}
